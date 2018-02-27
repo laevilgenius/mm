@@ -1,0 +1,204 @@
+[
+  {
+    "type": "dir",
+    "path": "folder1",
+    "timestamp": 1493908313,
+    "dirname": "",
+    "basename": "folder1",
+    "filename": "folder1"
+  },
+  {
+    "type": "dir",
+    "path": "images",
+    "timestamp": 1493725514,
+    "dirname": "",
+    "basename": "images",
+    "filename": "images"
+  },
+  {
+    "type": "file",
+    "path": "test.avi",
+    "timestamp": 1493725909,
+    "size": 4,
+    "dirname": "",
+    "basename": "test.avi",
+    "extension": "avi",
+    "filename": "test"
+  },
+  {
+    "type": "file",
+    "path": "test.mp3",
+    "timestamp": 1493725909,
+    "size": 4,
+    "dirname": "",
+    "basename": "test.mp3",
+    "extension": "mp3",
+    "filename": "test"
+  },
+  {
+    "type": "file",
+    "path": "test.txt",
+    "timestamp": 1493725909,
+    "size": 4,
+    "dirname": "",
+    "basename": "test.txt",
+    "extension": "txt",
+    "filename": "test"
+  },
+  {
+    "type": "file",
+    "path": "test.zip",
+    "timestamp": 1493725909,
+    "size": 4,
+    "dirname": "",
+    "basename": "test.zip",
+    "extension": "zip",
+    "filename": "test"
+  },
+  {
+    "type": "file",
+    "path": "folder1/test.docx",
+    "timestamp": 1493907416,
+    "size": 0,
+    "dirname": "folder1",
+    "basename": "test.docx",
+    "extension": "docx",
+    "filename": "test"
+  },
+  {
+    "type": "file",
+    "path": "folder1/test.html",
+    "timestamp": 1493907679,
+    "size": 4,
+    "dirname": "folder1",
+    "basename": "test.html",
+    "extension": "html",
+    "filename": "test"
+  },
+  {
+    "type": "file",
+    "path": "folder1/test.pdf",
+    "timestamp": 1493726022,
+    "size": 5961,
+    "dirname": "folder1",
+    "basename": "test.pdf",
+    "extension": "pdf",
+    "filename": "test"
+  },
+  {
+    "type": "file",
+    "path": "folder1/test.pptx",
+    "timestamp": 1493907586,
+    "size": 0,
+    "dirname": "folder1",
+    "basename": "test.pptx",
+    "extension": "pptx",
+    "filename": "test"
+  },
+  {
+    "type": "file",
+    "path": "folder1/test.xlsx",
+    "timestamp": 1493907399,
+    "size": 6550,
+    "dirname": "folder1",
+    "basename": "test.xlsx",
+    "extension": "xlsx",
+    "filename": "test"
+  },
+  {
+    "type": "file",
+    "path": "images/Chrysanthemum.jpg",
+    "timestamp": 1493725514,
+    "size": 879394,
+    "dirname": "images",
+    "basename": "Chrysanthemum.jpg",
+    "extension": "jpg",
+    "filename": "Chrysanthemum",
+    "thumb":
+      "https://www.iutbayonne.univ-pau.fr/~klevron/mm/thumbs/images/Chrysanthemum_150x150.jpg"
+  },
+  {
+    "type": "file",
+    "path": "images/Desert.jpg",
+    "timestamp": 1493725513,
+    "size": 845941,
+    "dirname": "images",
+    "basename": "Desert.jpg",
+    "extension": "jpg",
+    "filename": "Desert",
+    "thumb":
+      "https://www.iutbayonne.univ-pau.fr/~klevron/mm/thumbs/images/Desert_150x150.jpg"
+  },
+  {
+    "type": "file",
+    "path": "images/Hydrangeas.jpg",
+    "timestamp": 1493725513,
+    "size": 595284,
+    "dirname": "images",
+    "basename": "Hydrangeas.jpg",
+    "extension": "jpg",
+    "filename": "Hydrangeas",
+    "thumb":
+      "https://www.iutbayonne.univ-pau.fr/~klevron/mm/thumbs/images/Hydrangeas_150x150.jpg"
+  },
+  {
+    "type": "file",
+    "path": "images/Jellyfish.jpg",
+    "timestamp": 1493725513,
+    "size": 775702,
+    "dirname": "images",
+    "basename": "Jellyfish.jpg",
+    "extension": "jpg",
+    "filename": "Jellyfish",
+    "thumb":
+      "https://www.iutbayonne.univ-pau.fr/~klevron/mm/thumbs/images/Jellyfish_150x150.jpg"
+  },
+  {
+    "type": "file",
+    "path": "images/Koala.jpg",
+    "timestamp": 1493725513,
+    "size": 780831,
+    "dirname": "images",
+    "basename": "Koala.jpg",
+    "extension": "jpg",
+    "filename": "Koala",
+    "thumb":
+      "https://www.iutbayonne.univ-pau.fr/~klevron/mm/thumbs/images/Koala_150x150.jpg"
+  },
+  {
+    "type": "file",
+    "path": "images/Lighthouse.jpg",
+    "timestamp": 1493725513,
+    "size": 561276,
+    "dirname": "images",
+    "basename": "Lighthouse.jpg",
+    "extension": "jpg",
+    "filename": "Lighthouse",
+    "thumb":
+      "https://www.iutbayonne.univ-pau.fr/~klevron/mm/thumbs/images/Lighthouse_150x150.jpg"
+  },
+  {
+    "type": "file",
+    "path": "images/Penguins.jpg",
+    "timestamp": 1493725513,
+    "size": 777835,
+    "dirname": "images",
+    "basename": "Penguins.jpg",
+    "extension": "jpg",
+    "filename": "Penguins",
+    "thumb":
+      "https://www.iutbayonne.univ-pau.fr/~klevron/mm/thumbs/images/Penguins_150x150.jpg"
+  },
+  {
+    "type": "file",
+    "path": "images/Tulips.jpg",
+    "timestamp": 1493725513,
+    "size": 620888,
+    "dirname": "images",
+    "basename": "Tulips.jpg",
+    "extension": "jpg",
+    "filename": "Tulips",
+    "thumb":
+      "https://www.iutbayonne.univ-pau.fr/~klevron/mm/thumbs/images/Tulips_150x150.jpg"
+  }
+]

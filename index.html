@@ -88,7 +88,7 @@
         var mm1, mm2, mm3;
 
         var api = {
-            baseUrl: 'http://127.0.0.1/mm-server/web/api/',
+            baseUrl: '/api',
             listUrl: 'list',
             downloadUrl: 'download',
             uploadUrl: 'upload'
@@ -132,8 +132,8 @@
                 template: `<vue-media-manager :opts="options"></vue-media-manager>`,
                 created() {
                     var api = {
-                        baseUrl: 'http://localhost:8081/',
-                        listUrl: 'list.json',
+                        baseUrl: '/api',
+                        listUrl: 'list',
                         downloadUrl: 'download',
                         uploadUrl: 'upload'
                     };

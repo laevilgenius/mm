@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var path = require('path')
+var DevServer = require('./devServer')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 var PROD = (process.env.NODE_ENV === 'production')
@@ -86,7 +87,10 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         noInfo: true,
-        overlay: true
+        overlay: true,
+        before(app){
+            DevServer.registerApi(app)
+        }
     },
     performance: {
         hints: false
