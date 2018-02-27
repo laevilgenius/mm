@@ -80,6 +80,8 @@ import UploadStatusWidget from './UploadStatusWidget.vue';
 import MediasWidget from './MediasWidget.vue';
 import DetailsWidget from './DetailsWidget.vue';
 import NotificationWidget from './NotificationWidget.vue';
+import FaIconClassHelper from '../FaIconClassHelper'
+
 
 export default {
     props: ['api', 'id'],
@@ -185,22 +187,7 @@ export default {
          * FA icon class helper
          */
         faIconClass(file) {
-            let str='fa fa-fw fa-';
-            if (file.type=='dir') {
-                return str+'folder';
-            }
-            switch(file.extension) {
-                case 'txt' :
-                    str+= 'file-text-o';
-                    break;
-                case 'pdf' :
-                    str+= 'file-pdf-o';
-                    break;
-                default:
-                    str+= 'file-o';
-                    break;
-            }
-            return str;
+            return FaIconClassHelper.getFaIconClass(file);
         }
     }
 };
