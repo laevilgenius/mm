@@ -63,8 +63,11 @@ npm install mm
 and
 
 ```
-import { MM } from 'mm'
-require('mm/dist/style.css')
+import { MM } from 'vue-media-manager'
+require('vue-media-manager/dist/style.css')
+require('font-awesome/css/font-awesome.css')
+require('bootstrap/dist/css/bootstrap.css')
+require('bootstrap/dist/js/bootstrap.js')
 ```
 
 ### Server
