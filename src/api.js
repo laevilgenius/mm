@@ -8,6 +8,7 @@ export default class Api {
             listUrl: null,
             downloadUrl: null,
             uploadUrl: null,
+            deleteUrl: null,
             axiosOptions: {}
         };
     }
@@ -30,6 +31,11 @@ export default class Api {
     upload(data, config) {
         var conf = this.computeConfig(config);
         return this.axios.post(this.options.uploadUrl, data, conf);
+    }
+
+    deleteFile(file) {
+        var conf = this.computeConfig({ path: file.path });
+        return this.axios.post(this.options.deleteUrl, conf)
     }
 
     computeConfig(conf) {

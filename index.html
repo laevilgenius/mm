@@ -91,7 +91,8 @@
             baseUrl: '/api',
             listUrl: 'list',
             downloadUrl: 'download',
-            uploadUrl: 'upload'
+            uploadUrl: 'upload',
+            deleteUrl: 'delete'
         };
 
         mm1 = new MM({
@@ -108,7 +109,7 @@
             input: '#file-input-3',
             multipleSelection: true,
             height: '400px'
-        }); 
+        });
 
         $('#media-manager-modal').on('show.bs.modal', function (e) {
             mm2 = new MM({

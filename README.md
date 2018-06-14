@@ -22,7 +22,7 @@ This project use Javascript and :
   - [x] Local
   - [x] FTP
   - [x] SFTP
-  - [x] ... 
+  - [x] ...
 - [x] Drag&drop file upload
 - [x] Multiple file upload
 - [x] Image preview
@@ -32,7 +32,7 @@ This project use Javascript and :
   - [x] Details
   - [x] Download
   - [ ] Rename / Move
-  - [ ] Delete
+  - [x] Delete
 - [ ] Folder actions :
   - [x] Details
   - [ ] Download

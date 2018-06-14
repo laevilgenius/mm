@@ -1,5 +1,6 @@
 var multer  = require('multer')
 var upload = multer({ dest: 'uploads/' })
+var bodyParser = require('body-parser')
 
 var files = require('./files.json')
 
@@ -23,6 +24,11 @@ class DevServer {
                 "extension": filenameParts.pop(),
                 "filename": filenameParts[0]
             })
+
+            res.sendStatus(200);
+        });
+        app.post('/api/delete', bodyParser.json(), function(req, res) {
+            files.splice(files.findIndex(file => file.path == req.body.path), 1);
 
             res.sendStatus(200);
         });
