@@ -33,8 +33,8 @@ export default class Api {
         return this.axios.post(this.options.uploadUrl, data, conf);
     }
 
-    deleteFile(file) {
-        var conf = this.computeConfig({ path: file.path });
+    delete(path) {
+        var conf = this.computeConfig({ path });
         return this.axios.post(this.options.deleteUrl, conf)
     }
 

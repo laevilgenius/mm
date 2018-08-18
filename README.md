@@ -37,7 +37,7 @@ This project use Javascript and :
   - [x] Details
   - [ ] Download
   - [ ] Rename / Move
-  - [ ] Delete
+  - [x] Delete
 - [x] Context menu
 - [x] vuejs component
 - [x] npm package

@@ -55,6 +55,7 @@
                     <ul v-if="contextMenuFile.type=='dir'">
                         <li><a v-on:click.prevent="onMediaClick(contextMenuFile)" href="#"><i class="fa fa-fw fa-folder-open"></i> Open</a></li>
                         <li><a v-on:click.prevent="mmc.toggleDetailsOn(contextMenuFile)" href="#"><i class="fa fa-fw fa-info-circle"></i> Details</a></li>
+                        <li><a v-on:click.prevent="deleteFile(contextMenuFile)" href="#"><i class="fa fa-fw fa-times"></i> Delete</a></li>
                     </ul>
                     <ul v-else>
                         <li v-if="mmc.isSelected(contextMenuFile)"><a v-on:click.prevent="mmc.unselectFile(contextMenuFile)" href="#"><i class="fa fa-fw fa-times"></i> Unselect</a></li>
@@ -125,7 +126,7 @@ export default {
     },
     methods: {
         deleteFile(file) {
-          this.api.deleteFile(file)
+          this.api.delete(file.path)
           this.refresh()
         },
         refresh() {
