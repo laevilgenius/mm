@@ -116,7 +116,7 @@ export default {
                 breadcrumb = [],
                 path = '';
 
-            breadcrumb.push({ label: '<i class="fa fa-fw fa-home"></i>', path: this.basePath });
+            breadcrumb.push({ label: '<i class="fas fa-fw fa-home"></i>', path: this.basePath });
             for (let i=0; i<parts.length; i++) {
                 if (parts[i]) {
                     path+= parts[i] + '/';

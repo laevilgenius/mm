@@ -6,7 +6,7 @@
 
             <div class="alert alert-warning animated fadeIn">
                 {{ error }}
-                <p><button v-on:click.prevent="refresh()" class="btn btn-primary"><i class="fa fa-fw fa-refresh"></i> Click here to retry</button></p>
+                <p><button v-on:click.prevent="refresh()" class="btn btn-primary"><i class="fas fa-fw fa-sync-alt"></i> Click here to retry</button></p>
             </div>
 
         </template>
@@ -22,7 +22,7 @@
                     <div class="file animated fadeIn">
                         <div class="file-preview">
                             <div class="icon">
-                                <i class="fa fa-fw fa-spin fa-refresh"></i>
+                                <i class="fas fa-fw fa-sync-alt fa-spin"></i>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                     <div v-if="relPath" v-on:click="browse(pathUp)" class="file animated fadeIn">
                         <div class="file-preview">
                             <div class="icon">
-                                <i class="fa fa-fw fa-backward"></i>
+                                <i class="fas fa-fw fa-backward"></i>
                             </div>
                         </div>
                     </div>
@@ -53,16 +53,16 @@
             <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
                 <div v-if="showContextMenu" class="context-menu" v-bind:style="contextMenuStyle">
                     <ul v-if="contextMenuFile.type=='dir'">
-                        <li><a v-on:click.prevent="onMediaClick(contextMenuFile)" href="#"><i class="fa fa-fw fa-folder-open"></i> Open</a></li>
-                        <li><a v-on:click.prevent="mmc.toggleDetailsOn(contextMenuFile)" href="#"><i class="fa fa-fw fa-info-circle"></i> Details</a></li>
-                        <li><a v-on:click.prevent="deleteFile(contextMenuFile)" href="#"><i class="fa fa-fw fa-times"></i> Delete</a></li>
+                        <li><a v-on:click.prevent="onMediaClick(contextMenuFile)" href="#"><i class="fas fa-fw fa-folder-open"></i> Open</a></li>
+                        <li><a v-on:click.prevent="mmc.toggleDetailsOn(contextMenuFile)" href="#"><i class="fas fa-fw fa-info-circle"></i> Details</a></li>
+                        <li><a v-on:click.prevent="deleteFile(contextMenuFile)" href="#"><i class="fas fa-fw fa-times"></i> Delete</a></li>
                     </ul>
                     <ul v-else>
-                        <li v-if="mmc.isSelected(contextMenuFile)"><a v-on:click.prevent="mmc.unselectFile(contextMenuFile)" href="#"><i class="fa fa-fw fa-times"></i> Unselect</a></li>
-                        <li v-else><a v-on:click.prevent="mmc.selectFile(contextMenuFile)" href="#"><i class="fa fa-fw fa-check"></i> Select</a></li>
-                        <li><a v-on:click.prevent="mmc.toggleDetailsOn(contextMenuFile)" href="#"><i class="fa fa-fw fa-info-circle"></i> Details</a></li>
-                        <li v-if="api.downloadUrl(contextMenuFile)" ><a v-bind:href="api.downloadUrl(contextMenuFile)"><i class="fa fa-fw fa-download"></i> Download</a></li>
-                        <li><a v-on:click.prevent="deleteFile(contextMenuFile)"><i class="fa fa-fw fa-times"></i> Delete</a></li>
+                        <li v-if="mmc.isSelected(contextMenuFile)"><a v-on:click.prevent="mmc.unselectFile(contextMenuFile)" href="#"><i class="fas fa-fw fa-times"></i> Unselect</a></li>
+                        <li v-else><a v-on:click.prevent="mmc.selectFile(contextMenuFile)" href="#"><i class="fas fa-fw fa-check"></i> Select</a></li>
+                        <li><a v-on:click.prevent="mmc.toggleDetailsOn(contextMenuFile)" href="#"><i class="fas fa-fw fa-info-circle"></i> Details</a></li>
+                        <li v-if="api.downloadUrl(contextMenuFile)" ><a v-bind:href="api.downloadUrl(contextMenuFile)"><i class="fas fa-fw fa-download"></i> Download</a></li>
+                        <li><a v-on:click.prevent="deleteFile(contextMenuFile)"><i class="fas fa-fw fa-times"></i> Delete</a></li>
                     </ul>
                 </div>
             </transition>

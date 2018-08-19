@@ -10,7 +10,7 @@
 
             <template v-else-if="file.type=='dir'">
                 <div class="icon">
-                    <i class="fa fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-folder"></i>
                 </div>
             </template>
 
