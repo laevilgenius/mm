@@ -10,13 +10,13 @@
 
             <template v-else-if="file.type=='dir'">
                 <div class="icon">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <font-awesome-icon icon="folder" fixed-width/>
                 </div>
             </template>
 
             <template v-else>
                 <div class="icon">
-                    <i v-bind:class="mmc.faIconClass(file)"></i>
+                    <font-awesome-icon :icon="mmc.faIconClass(file)" fixed-width/>
                 </div>
             </template>
 

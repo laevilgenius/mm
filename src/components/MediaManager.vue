@@ -39,6 +39,9 @@
                 </notification-widget>
 
                 <ol v-if="options.showBreadcrumb" class="breadcrumb">
+                    <li>
+                        <a v-on:click.prevent="path=basePath"><font-awesome-icon icon="home" fixed-width/></a>
+                    </li>
                     <li v-for="item in breadcrumb">
                         <a v-on:click.prevent="path=item.path" v-html="item.label" href="#"></a>
                     </li>
@@ -80,7 +83,7 @@ import UploadStatusWidget from './UploadStatusWidget.vue';
 import MediasWidget from './MediasWidget.vue';
 import DetailsWidget from './DetailsWidget.vue';
 import NotificationWidget from './NotificationWidget.vue';
-import FaIconClassHelper from '../FaIconClassHelper'
+import { getFaIcon } from '../faIconHelper'
 
 
 export default {
@@ -116,7 +119,6 @@ export default {
                 breadcrumb = [],
                 path = '';
 
-            breadcrumb.push({ label: '<i class="fas fa-fw fa-home"></i>', path: this.basePath });
             for (let i=0; i<parts.length; i++) {
                 if (parts[i]) {
                     path+= parts[i] + '/';
@@ -187,7 +189,7 @@ export default {
          * FA icon class helper
          */
         faIconClass(file) {
-            return FaIconClassHelper.getFaIconClass(file);
+            return getFaIcon(file);
         }
     }
 };

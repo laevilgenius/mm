@@ -11,11 +11,13 @@
 <script>
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import MediaManager from './MediaManager.vue';
 import Api from '../api.js';
 import Store from '../Store'
 
 Vue.use(Vuex);
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 const defaultOptions = {
     basePath: '',

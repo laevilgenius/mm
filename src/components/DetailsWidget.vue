@@ -17,7 +17,7 @@
                             <td rowspan="4" style="text-align: center;">
                                 <img v-if="file.thumb" v-bind:src="file.thumb" class="thumb">
                                 <div v-else class="icon">
-                                    <i v-bind:class="mmc.faIconClass(file)"></i>
+                                    <font-awesome-icon :icon="mmc.faIconClass(file)" fixed-width/>
                                 </div>
                             </td>
                             <th>Name</th>
@@ -38,11 +38,11 @@
                     </tbody>
                 </table>
                 <p class="buttons">
-                    <button v-on:click.prevent="onClose" class="btn btn-default btn-sm" role="button"><i class="fas fa-times" aria-hidden="true"></i> Close</button>
+                    <button v-on:click.prevent="onClose" class="btn btn-default btn-sm" role="button"><font-awesome-icon icon="times"/> Close</button>
                     <template v-if="file.type!='dir'">
-                        <a v-if="api.downloadUrl(file)" v-bind:href="api.downloadUrl(file)" class="btn btn-primary btn-sm" role="button"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
-                        <button v-if="mmc.isSelected(file)" v-on:click.prevent="onUnselect"class="btn btn-primary btn-sm" role="button"><i class="fas fa-times" aria-hidden="true"></i> Unselect</button>
-                        <button v-else v-on:click.prevent="onSelect"class="btn btn-primary btn-sm" role="button"><i class="fas fa-check" aria-hidden="true"></i> Select</button>
+                        <a v-if="api.downloadUrl(file)" v-bind:href="api.downloadUrl(file)" class="btn btn-primary btn-sm" role="button"><font-awesome-icon icon="download"/> Download</a>
+                        <button v-if="mmc.isSelected(file)" v-on:click.prevent="onUnselect"class="btn btn-primary btn-sm" role="button"><font-awesome-icon icon="times"/> Unselect</button>
+                        <button v-else v-on:click.prevent="onSelect"class="btn btn-primary btn-sm" role="button"><font-awesome-icon icon="check"/> Select</button>
                     </template>
                 </p>
             </div>
