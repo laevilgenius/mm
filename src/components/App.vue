@@ -1,6 +1,6 @@
 <template>
 
-    <div class="media-manager" v-bind:id="id">
+    <div class="media-manager">
 
         <div ref="mediaManager"></div>
 
@@ -40,7 +40,7 @@ const defaultOptions = {
 
 export default {
     components: { MediaManager },
-    props: [ 'id', 'opts'],
+    props: ['opts'],
     created() {
         this.options = { ...defaultOptions, ...this.opts };
 
@@ -92,7 +92,7 @@ export default {
             this.options.onMounted({ el: this.$el, vc: this });
 
         const store = new Vuex.Store(Store.create(this, this.options));
-        
+
         var mediaManager = this.$refs.mediaManager
 
         new Vue({
@@ -100,7 +100,6 @@ export default {
             store,
             render: h => h(MediaManager, {
                 props: {
-                    id: this.id,
                     api: this.api
                 }
             })

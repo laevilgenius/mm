@@ -84,7 +84,7 @@ import FaIconClassHelper from '../FaIconClassHelper'
 
 
 export default {
-    props: ['api', 'id'],
+    props: ['api'],
     components: {
         MediasWidget,
         UploadWidget,

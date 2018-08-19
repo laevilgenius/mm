@@ -20,12 +20,10 @@ export class MM {
         /*
          * Init Vue
          */
-        let el = document.querySelector(this.options.el);
         this.vm = new Vue({
             el: this.options.el,
             render: h => h(App, {
                 props: {
-                    id: el.id,
                     opts: this.options
                 }
             })
