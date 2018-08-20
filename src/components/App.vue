@@ -11,13 +11,14 @@
 <script>
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { FontAwesomeIcon, FontAwesomeLayers } from '@fortawesome/vue-fontawesome';
 import MediaManager from './MediaManager.vue';
 import Api from '../api.js';
 import Store from '../Store'
 
 Vue.use(Vuex);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
+Vue.component('font-awesome-layers', FontAwesomeLayers)
 
 const defaultOptions = {
     basePath: '',

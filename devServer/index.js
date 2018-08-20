@@ -21,6 +21,15 @@ class DevServer {
 
             res.sendStatus(200);
         });
+        app.post('/api/new-dir', bodyParser.json(), function(req, res) {
+            files.push({
+                "type": "dir",
+                "path": req.body.path,
+                "timestamp": Date.now(),
+            })
+
+            res.sendStatus(200);
+        });
         app.post('/api/delete', bodyParser.json(), function(req, res) {
             files.splice(files.findIndex(file => file.path == req.body.path), 1);
 

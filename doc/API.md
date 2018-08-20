@@ -17,6 +17,11 @@ This API call should return an array of files (object) with the following proper
 - Params :
   - `path`
 
+## new-dir
+- Method : POST
+- Params :
+  - `path`
+
 ## delete
 - Method : POST
 - Params :

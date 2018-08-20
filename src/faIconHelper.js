@@ -1,7 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
     faTimes, faDownload, faCheck, faSyncAlt, faBackward,
-    faFolderOpen, faInfoCircle, faFolder, faHome
+    faFolderOpen, faInfoCircle, faFolder, faHome, faPlus
 } from '@fortawesome/free-solid-svg-icons'
 import {
     faFolder as farFolder,
@@ -26,7 +26,7 @@ const faIconMatchExtension = new Map([
 
 library.add(
     faTimes, faDownload, faCheck, faSyncAlt, faBackward,
-    faFolderOpen, faInfoCircle, faFolder, faHome,
+    faFolderOpen, faInfoCircle, faFolder, faHome, faPlus,
     farFolder, faFile, ...faIconMatchExtension.keys()
 )
 

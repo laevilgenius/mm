@@ -38,6 +38,20 @@
                         </div>
                     </div>
 
+                    <div class="file animated fadeIn">
+                        <div @click="newFolder()" class="file-preview">
+                            <div class="icon">
+                                <font-awesome-layers>
+                                    <font-awesome-icon icon="folder" fixed-width/>
+                                    <font-awesome-icon :icon="newFolderName.length ? 'check' : 'plus'" fixed-width transform="shrink-8" style="color: white;"/>
+                                </font-awesome-layers>
+                            </div>
+                        </div>
+                        <div class="file-title">
+                            <h3><input v-model.trim="newFolderName" placeholder="Create folder" class="transparent-input"></h3>
+                        </div>
+                    </div>
+
                     <media-widget
                         v-for="file, key in files"
                         v-on:click.native="onMediaClick(file)"
@@ -86,6 +100,7 @@ export default {
             files: [],
             loading: false,
             error: false,
+            newFolderName: '',
             contextMenuFile: {},
             contextMenuX: 0,
             contextMenuY: 0,
@@ -126,6 +141,17 @@ export default {
         this.refresh();
     },
     methods: {
+        newFolder() {
+            if (this.newFolderName.length == 0)
+                return
+            let path = this.newFolderName
+            if (this.path.length > 0)
+                path = this.path + '/' + path
+            this.api.newDir(path).then(() => {
+                this.newFolderName = ''
+                this.refresh()
+            })
+        },
         deleteFile(file) {
           this.api.delete(file.path)
               .then(() => this.refresh())

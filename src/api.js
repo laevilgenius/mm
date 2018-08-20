@@ -10,6 +10,7 @@ export default class Api {
             downloadUrl: 'download',
             uploadUrl: 'upload',
             deleteUrl: 'delete',
+            newDirUrl: 'new-dir',
         };
     }
 
@@ -31,6 +32,11 @@ export default class Api {
     upload(data, config) {
         var conf = this.computeConfig(config);
         return this.axios.post(this.options.uploadUrl, data, conf);
+    }
+
+    newDir(path) {
+        var conf = this.computeConfig({ path });
+        return this.axios.post(this.options.newDirUrl, conf);
     }
 
     delete(path) {
