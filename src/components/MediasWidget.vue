@@ -127,7 +127,7 @@ export default {
     methods: {
         deleteFile(file) {
           this.api.delete(file.path)
-          this.refresh()
+              .then(() => this.refresh())
         },
         refresh() {
             this.loading = true;
