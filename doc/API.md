@@ -8,9 +8,6 @@
 This API call should return an array of files (object) with the following properties :
 - `type` : *dir* or *file*
 - `path` : e.g. `folder/image.jpg` (no leading slash)
-- `basename` : e.g. `image.jpg`
-- `extension` : e.g. `jpg`
-- `filename` : e.g. `image`
 - `timestamp` : e.g. `1493908313`
 - `size` : e.g. `6550`
 - `thumb` : e.g. `https://www.iutbayonne.univ-pau.fr/~klevron/mm/thumbs/images/Chrysanthemum_150x150.jpg`

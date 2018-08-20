@@ -76,6 +76,7 @@
 <script>
 /* global $ */
 import { mapState } from 'vuex';
+import { File } from '../file';
 import MediaWidget from './MediaWidget.vue';
 
 export default {
@@ -141,7 +142,7 @@ export default {
                                 bs = b.type +'/'+ b.basename;
                             return as.localeCompare(bs)
                         });
-                        this.files = response.data;
+                        this.files = response.data.map(obj => new File(obj));
                     }
                     this.loading = false;
                 }, error => {

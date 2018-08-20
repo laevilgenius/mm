@@ -9,20 +9,14 @@ class DevServer {
         app.get('/api/list', function(req, res) {
             var path = req.query.path
             if (path === '/') path = ''
-            res.json(files.filter(f => f.dirname === path));
+            res.json(files.filter(f => f.path.substring(0, f.path.lastIndexOf('/')) === path));
         });
         app.post('/api/upload', upload.single('file'), function(req, res) {
-            var path = req.body.path;
-            var filenameParts = req.file.originalname.split('.')
             files.push({
                 "type": "file",
-                "path": path + '/' + req.file.originalname,
+                "path": req.body.path + '/' + req.file.originalname,
                 "timestamp": Date.now(),
                 "size": req.file.size,
-                "dirname": path,
-                "basename": req.file.originalname,
-                "extension": filenameParts.pop(),
-                "filename": filenameParts[0]
             })
 
             res.sendStatus(200);
