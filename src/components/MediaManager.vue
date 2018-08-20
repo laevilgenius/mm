@@ -20,9 +20,9 @@
             ></upload-status-widget>
         </transition>
 
-        <div class="panel panel-default">
+        <div class="card">
 
-            <!--<div class="panel-heading">-->
+            <!--<div class="card-heading">-->
             <!--    <div class="btn-group btn-group-xs">-->
             <!--    <button v-on:click="toggleUpload" class="btn btn-default">-->
             <!--        <i class="fa fa-upload" aria-hidden="true"></i>-->
@@ -34,15 +34,15 @@
             <!--    </div>-->
             <!--</div>-->
 
-            <div class="panel-body">
+            <div class="card-body">
                 <notification-widget>
                 </notification-widget>
 
                 <ol v-if="options.showBreadcrumb" class="breadcrumb">
-                    <li>
+                    <li class="breadcrumb-item">
                         <a v-on:click.prevent="path=basePath"><font-awesome-icon icon="home" fixed-width/></a>
                     </li>
-                    <li v-for="item in breadcrumb">
+                    <li v-for="item in breadcrumb" class="breadcrumb-item">
                         <a v-on:click.prevent="path=item.path" v-html="item.label" href="#"></a>
                     </li>
                 </ol>
@@ -204,7 +204,7 @@ export default {
 }
 
 .mm-fixed-height {
-    > .panel {
+    > .card {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -212,7 +212,7 @@ export default {
         right: 0;
         margin: 0;
 
-        > .panel-body {
+        > .card-body {
             position: absolute;
             top: 0; //47px;
             bottom: 0;

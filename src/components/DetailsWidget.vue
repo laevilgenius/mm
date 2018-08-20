@@ -1,16 +1,16 @@
 <template>
 
-    <div class="details-widget panel-modal">
-        <div class="panel panel-default">
+    <div class="details-widget card-modal">
+        <div class="card">
 
-            <div class="panel-heading">
+            <div class="card-header">
                 Media Details
                 <button v-on:click="onClose" type="button" class="close" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
-            <div class="details-widget-content panel-body">
+            <div class="details-widget-content card-body">
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
@@ -38,7 +38,7 @@
                     </tbody>
                 </table>
                 <p class="buttons">
-                    <button v-on:click.prevent="onClose" class="btn btn-default btn-sm" role="button"><font-awesome-icon icon="times"/> Close</button>
+                    <button v-on:click.prevent="onClose" class="btn btn-secondary btn-sm" role="button"><font-awesome-icon icon="times"/> Close</button>
                     <template v-if="file.type!='dir'">
                         <a v-if="api.downloadUrl(file)" v-bind:href="api.downloadUrl(file)" class="btn btn-primary btn-sm" role="button"><font-awesome-icon icon="download"/> Download</a>
                         <button v-if="mmc.isSelected(file)" v-on:click.prevent="onUnselect"class="btn btn-primary btn-sm" role="button"><font-awesome-icon icon="times"/> Unselect</button>

@@ -1,14 +1,14 @@
 <template>
 
-    <div class="upload-status-widget panel-modal">
-        <div class="panel panel-default">
-            <div class="panel-heading">
+    <div class="upload-status-widget card-modal">
+        <div class="card">
+            <div class="card-header">
                 Upload Status
                 <button v-on:click="onClose" type="button" class="close" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <tbody>

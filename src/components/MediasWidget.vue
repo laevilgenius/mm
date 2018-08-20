@@ -1,6 +1,6 @@
 <template>
 
-    <div class="medias-widget clearfix">
+    <div class="medias-widget">
 
         <template v-if="error">
 
@@ -16,7 +16,7 @@
             <!--    This folder is empty.-->
             <!--</div>-->
 
-            <div class="medias clearfix">
+            <div class="medias">
                 <template v-if="loading">
 
                     <div class="file animated fadeIn">
