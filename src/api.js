@@ -4,12 +4,12 @@ export default class Api {
 
     static get defaultOptions() {
         return {
+            axiosOptions: {},
             baseUrl: null,
-            listUrl: null,
-            downloadUrl: null,
-            uploadUrl: null,
-            deleteUrl: null,
-            axiosOptions: {}
+            listUrl: 'list',
+            downloadUrl: 'download',
+            uploadUrl: 'upload',
+            deleteUrl: 'delete',
         };
     }
 
