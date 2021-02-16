@@ -1,7 +1,8 @@
 var webpack = require('webpack')
 var path = require('path')
 var DevServer = require('./devServer')
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var ExtractCssPlugin = require("mini-css-extract-plugin")
+var VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 var PROD = (process.env.NODE_ENV === 'production')
 
@@ -20,49 +21,51 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'vue-style-loader',
-                    'css-loader'
+                    PROD ? ExtractCssPlugin.loader : 'vue-style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
                 ]
             },
             {
                 test: /\.scss$/,
                 use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'sass-loader'
+                    PROD ? ExtractCssPlugin.loader : 'vue-style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                    'sass-loader',
                 ]
             },
             {
                 test: /\.sass$/,
                 use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'sass-loader?indentedSyntax'
+                    PROD ? ExtractCssPlugin.loader : 'vue-style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions: {
+                                indentedSyntax: true,
+                            },
+                        }
+                    },
                 ]
             },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
-                options: {
-                    loaders: {
-                        'scss': PROD ? ExtractTextPlugin.extract({
-                            use: ['css-loader', 'sass-loader'],
-                            fallback: 'vue-style-loader'
-                        }) : [
-                            'vue-style-loader',
-                            'css-loader',
-                            'sass-loader'
-                        ],
-                        'sass': PROD ? ExtractTextPlugin.extract({
-                            use: ['css-loader', 'sass-loader?indentedSyntax'],
-                            fallback: 'vue-style-loader'
-                        }) : [
-                            'vue-style-loader',
-                            'css-loader',
-                            'sass-loader?indentedSyntax'
-                        ]
-                    }
-                }
             },
             {
                 test: /\.js$/,
@@ -86,20 +89,25 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        noInfo: true,
         overlay: true,
-        before(app){
+        onBeforeSetupMiddleware({ app }){
             DevServer.registerApi(app)
         }
     },
     performance: {
         hints: false
     },
-    devtool: '#eval-source-map'
+    devtool: 'eval-source-map',
+    optimization: {
+        minimize: PROD,
+    },
+    plugins: [
+        new VueLoaderPlugin(),
+    ],
 }
 
 if (PROD) {
-    module.exports.devtool = '#source-map'
+    module.exports.devtool = 'source-map'
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
@@ -107,16 +115,10 @@ if (PROD) {
                 NODE_ENV: '"production"'
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
-        }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
         }),
-        new ExtractTextPlugin('style.css')
+        new ExtractCssPlugin({filename: 'style.css'}),
     ])
     module.exports.externals = {
         'vue' : 'vue',
